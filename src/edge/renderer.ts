@@ -50,6 +50,13 @@ export class EdgeRenderer {
   }
 
   /**
+  * Get the shared locals
+  */
+  getLocals() {
+    return this.#locals
+  }
+
+  /**
    * Render the template
    */
   async render(templatePath: string, state: Record<string, any> = {}): Promise<string> {
