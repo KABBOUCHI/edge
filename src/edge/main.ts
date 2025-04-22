@@ -23,6 +23,7 @@ import type {
   LoaderContract,
 } from '../types.js'
 import { pluginSuperCharged } from '../plugins/supercharged.js'
+import { pluginVerbatim } from '../plugins/verbatim.js'
 
 /**
  * Exposes the API to render templates, register custom tags and globals
@@ -110,6 +111,11 @@ export class Edge {
       fn: pluginSuperCharged,
       executed: false,
       options: { recurring: !options.cache },
+    })
+
+    this.#bundledPlugins.push({
+      fn: pluginVerbatim,
+      executed: false,
     })
   }
 
